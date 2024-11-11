@@ -1,5 +1,6 @@
 .carta {
   perspective: 500px;
+  display: inline-block;
 }
 
 .carta img {
@@ -7,6 +8,7 @@
   height: 337px;
   transition: transform 0.3s ease, opacity 0.5s ease;
   transform-style: preserve-3d;
+  display: inline-block;
 }
 
 .carta img.isFlipped {
