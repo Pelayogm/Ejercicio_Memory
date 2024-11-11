@@ -1,23 +1,25 @@
-import React from "react";
-import parte_trasera from "./img/cartas/Carta-atras.png";
-import parte_delantera from "./img/cartas/Lapras-Vmax.png";
+import React, { useState } from "react";
+import parteTrasera from "./img/cartas/Carta-atras.png";
+import parteDelantera from "./img/cartas/Lapras-Vmax.png";
 
-const Carta = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
-
-  function cambiarImagen() {
-    const imagen = document.getElementById("carta");
+const Carta = () => {
+  const [isFlipped, setIsFlipped] = useState(false);
 
 
-    if (imagen.src.includes({parte_trasera})) {
-        imagen.src = {parte_delantera};
-    } else {
-        imagen.src = "imagen1.jpg";
-    }
-}
+  const cambiarImagen = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <div>
-      <img src={parte_trasera} onClick={cambiarImagen} id="carta" />
+      <img
+        src={isFlipped ? parteDelantera : parteTrasera}
+        onClick={cambiarImagen}
+        alt="Carta"
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };
+
 export default Carta;
