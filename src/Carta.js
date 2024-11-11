@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import parteTrasera from "./img/cartas/Carta-atras.png";
 import parteDelantera from "./img/cartas/Lapras-Vmax.png";
 
-const Carta = () => {
+const Carta = ({carta}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
 
@@ -16,7 +16,7 @@ const Carta = () => {
         src={isFlipped ? parteDelantera : parteTrasera}
         onClick={cambiarImagen}
         alt="Carta"
-        style={{ cursor: "pointer" }}
+        style={{ width: "242px", height: "337px" }}
       />
     </div>
   );
