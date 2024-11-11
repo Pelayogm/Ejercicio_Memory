@@ -2,15 +2,11 @@ import Carta from "./Carta";
 
 function Tablero () {
 
-    const mapaCartas = [{   
-          "type": "Charizard",
-          "image": "./img/cartas/Charizard-Tera.png", 
-        },
-        {
-          "type": "Lapras",
-          "image": "./img/cartas/Lapras-Vmax.png",
-        }
-        ];
+    const mapaCartas = [
+      {"type": "Charizard", "image": "./img/cartas/Charizard-Tera.png"},
+      {"type": "Lapras", "image": "./img/cartas/Lapras-Vmax.png"},
+    
+    ];
     
 
     return (
