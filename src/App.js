@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Tablero from './Tablero';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <p>
           <p>Prueba</p>
         </p>
+        <Tablero></Tablero>
       </header>
     </div>
   );
