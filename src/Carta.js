@@ -7,16 +7,8 @@ const Carta = ({ onClick, card, index, isInactive, isFlipped, isDisabled }) => {
   };
 
   return (
-    <div
-      
-      onClick={handleClick}
-    >
-      <div className="parte_trasera">
-        <img src={parte_trasera} alt="pokeball" />
-      </div>
-      <div className="parte_frontal">
-        <img src={card.image} alt="pokeball" />
-      </div>
+    <div onClick={handleClick}>
+      <img src="./img/cartas/Charizard-Tera.png"></img>
     </div>
   );
 };
