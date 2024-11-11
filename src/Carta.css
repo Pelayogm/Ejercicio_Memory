@@ -1,0 +1,15 @@
+.carta {
+  perspective: 500px;
+}
+
+.carta img {
+  width: 242px;
+  height: 337px;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.carta img.isFlipped {
+  transform: rotateY(360deg); 
+}
+
