@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <p>Juego Memory</p>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <p>Prueba</p>
         </p>
       </header>
     </div>
