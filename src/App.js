@@ -5,11 +5,9 @@ import Tablero from './Tablero';
 function App() {
   return (
     <div className="App">
-      <header>
-        <p className='titulo-juego'>Juego Memory</p>
-      </header>
       <body>
         <div className='App'>
+          <p>Juego Memory</p>
             <Tablero></Tablero>
         </div>
       </body>
