@@ -1,7 +1,7 @@
 import Carta from "./Carta";
 import React, { useState } from "react";
 
-import Charizard from "./img/cartas/Carta-atras.png";
+import Charizard from "./img/cartas/Charizard-Tera.png";
 import Lapras from "./img/cartas/Lapras-Vmax.png"
 import Eternatus from "./img/cartas/Eternatus-Vmax.png"
 import Rayquaza from "./img/cartas/MegaRayquaza-EX.png"
