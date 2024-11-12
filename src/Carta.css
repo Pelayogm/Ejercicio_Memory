@@ -11,7 +11,7 @@
   display: inline-block;
 }
 
-.carta img.isFlipped {
+.isFlipped {
   transform: rotateY(180deg); 
 }
 
