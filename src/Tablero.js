@@ -1,5 +1,5 @@
 import Carta from "./Carta";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Charizard from "./img/cartas/Charizard-Tera.png";
 import Lapras from "./img/cartas/Lapras-Vmax.png"
@@ -25,9 +25,17 @@ function Tablero () {
 
     const cartasDuplicadas = [...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5);
 
+    const [selectedCards, setSelectedCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState(
       Array(mapaCartas.length).fill(false)
     );
+
+    const rows = [
+      cartasDuplicadas.slice(0,4),
+      cartasDuplicadas.slice(4,8),
+      cartasDuplicadas.slice(8,12),
+      cartasDuplicadas.slice(12,16),
+    ];
 
     const resetCards = () => {
       setFlippedCards(Array(mapaCartas.length).fill(false));
@@ -41,12 +49,19 @@ function Tablero () {
       });
     };
 
-    const rows = [
-      cartasDuplicadas.slice(0,4),
-      cartasDuplicadas.slice(4,8),
-      cartasDuplicadas.slice(8,12),
-      cartasDuplicadas.slice(12,16),
-    ];
+    useEffect(() => {
+      if (selectedCards.length === 2) {
+        const [firstCard, secnodCard] = selectedCards;
+
+        if(firstCard.type == secnodCard.type) {
+          
+        }
+      }
+
+
+    });
+
+    
     
     return (
       <div className="tablero">
