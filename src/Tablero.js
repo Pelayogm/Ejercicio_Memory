@@ -1,35 +1,74 @@
 import Carta from "./Carta";
+import React, { useState } from "react";
+
+import Charizard from "./img/cartas/Carta-atras.png";
+import Lapras from "./img/cartas/Lapras-Vmax.png"
+import Eternatus from "./img/cartas/Eternatus-Vmax.png"
+import Rayquaza from "./img/cartas/MegaRayquaza-EX.png"
+import Mewtwo from "./img/cartas/Mewtwo-ex.png"
+import Ondulagua from "./img/cartas/Ondulagua-ex.png"
+import Phanpy from "./img/cartas/Phanpy.png"
+import Pikachu from "./img/cartas/Pikachu-Vmax.png"
 
 function Tablero () {
 
     const mapaCartas = [
-      {"type": "Charizard", "image": "./img/cartas/Charizard-Tera.png"},
-      {"type": "Lapras", "image": "./img/cartas/Lapras-Vmax.png"},
-    
+      {type: "Charizard", image: Charizard},
+      {type: "Lapras", image: Lapras},
+      {type: "Eternatus", image: Eternatus},
+      {type: "Rayquaza", image: Rayquaza},
+      {type: "Mewtwo", image: Mewtwo},
+      {type: "Ondulagua", image: Ondulagua},
+      {type: "Phanpy", image: Phanpy},
+      {type: "Pikachu", image:Pikachu},
+    ];
+
+    const cartasDuplicadas = [...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5);
+
+    const [flippedCards, setFlippedCards] = useState(
+      Array(mapaCartas.length).fill(false)
+    );
+
+    const resetCards = () => {
+      setFlippedCards(Array(mapaCartas.length).fill(false));
+    };
+
+    const toggleCard = (index) => {
+      setFlippedCards((prevFlipped) => {
+        const newFlipped = [...prevFlipped];
+        newFlipped[index] = !newFlipped[index];
+        return newFlipped;
+      });
+    };
+
+    const rows = [
+      cartasDuplicadas.slice(0,4),
+      cartasDuplicadas.slice(4,8),
+      cartasDuplicadas.slice(8,12),
+      cartasDuplicadas.slice(12,16),
     ];
     
-
     return (
-        <div className="tablero">
-          <div>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
+      <div className="tablero">
+      <button onClick={resetCards}>Reiniciar Cartas</button>
+      <br />
+      <div className="grid">
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className="row">
+            {row.map((carta, index) => (
+              <Carta
+                key={index}
+                isFlipped={flippedCards[rowIndex * 4 + index]}
+                onClick={() => toggleCard(rowIndex * 4 + index)}
+                image={carta.image}
+                type={carta.type}
+              />
+            ))}
           </div>
-          <div>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
-          </div>
-          <div>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
-            <Carta></Carta>
-          </div>
-        </div>
+        ))}
+      </div>
+    </div>
     );
-}
-export default Tablero;
+  }
+  
+  export default Tablero;

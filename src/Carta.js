@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import parteTrasera from "./img/cartas/Carta-atras.png";
-import parteDelantera from "./img/cartas/Lapras-Vmax.png";
 import "./Carta.css";
 
-const Carta = ({carta}) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-
-  const cambiarImagen = () => {
-    setIsFlipped(!isFlipped);
-  };
-
+const Carta = ({ isFlipped, onClick, image, type }) => {
   return (
-    <div className="carta" onClick={cambiarImagen}>
+    <div className="carta" onClick={onClick}>
       <img
-        src={isFlipped ? parteDelantera : parteTrasera}
-        alt="Carta"
+        src={isFlipped ? image : parteTrasera}
+        alt={type}
         className={isFlipped ? 'isFlipped' : ''}
       />
     </div>
