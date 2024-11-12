@@ -5,7 +5,7 @@ import Tablero from './Tablero';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <p>Juego Memory</p>
         <p>
           <p>Prueba</p>

@@ -11,18 +11,14 @@ function Tablero () {
 
     return (
         <div className="tablero">
-            <div id = "row" className = 'row'>
-              <div row = "1" colunm = "1"><Carta></Carta></div>
-              <div row = "1" colunm = "2"><Carta></Carta></div>
-              <div row = "1" colunm = "3"><Carta></Carta></div>
-              <div row = "1" colunm = "4"><Carta></Carta></div>
-            </div>
-            <div id = "row" className = 'row'>
-              <div row = "2" colunm = "1"><Carta></Carta></div>
-              <div row = "2" colunm = "2"><Carta></Carta></div>
-              <div row = "2" colunm = "3"><Carta></Carta></div>
-              <div row = "2" colunm = "4"><Carta></Carta></div>
-            </div>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
+          <Carta></Carta>
         </div>
     );
 }
