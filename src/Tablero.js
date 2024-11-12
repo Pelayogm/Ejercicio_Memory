@@ -11,14 +11,24 @@ function Tablero () {
 
     return (
         <div className="tablero">
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
-          <Carta></Carta>
+          <div>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+          </div>
+          <div>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+          </div>
+          <div>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+            <Carta></Carta>
+          </div>
         </div>
     );
 }

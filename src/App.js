@@ -6,12 +6,13 @@ function App() {
   return (
     <div className="App">
       <header>
-        <p>Juego Memory</p>
-        <p>
-          <p>Prueba</p>
-        </p>
-        <Tablero></Tablero>
+        <p className='titulo-juego'>Juego Memory</p>
       </header>
+      <body>
+        <div className='App'>
+            <Tablero></Tablero>
+        </div>
+      </body>
     </div>
   );
 }

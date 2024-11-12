@@ -3,6 +3,14 @@
   background-image: url("./img/fondo/mesa-tablero.png");
 }
 
+.titulo-juego {
+  color: white;
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
