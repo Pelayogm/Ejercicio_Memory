@@ -15,10 +15,8 @@ function Tablero () {
     const mapaCartas = [
       {type: "Charizard", image: Charizard},
       {type: "Lapras", image: Lapras},
-      {type: "Eternatus", image: Eternatus},
       {type: "Rayquaza", image: Rayquaza},
       {type: "Mewtwo", image: Mewtwo},
-      {type: "Ondulagua", image: Ondulagua},
       {type: "Phanpy", image: Phanpy},
       {type: "Pikachu", image:Pikachu},
     ];
@@ -34,7 +32,6 @@ function Tablero () {
       cartasDuplicadas.slice(0,4),
       cartasDuplicadas.slice(4,8),
       cartasDuplicadas.slice(8,12),
-      cartasDuplicadas.slice(12,16),
     ];
 
     const resetCards = () => {
@@ -51,10 +48,10 @@ function Tablero () {
 
     useEffect(() => {
       if (selectedCards.length === 2) {
-        const [firstCard, secnodCard] = selectedCards;
+        const [firstCard, secondCard] = selectedCards;
 
-        if(firstCard.type == secnodCard.type) {
-          
+        if(firstCard.type == secondCard.type) {
+        
         }
       }
 

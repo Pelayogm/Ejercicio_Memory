@@ -4,8 +4,8 @@
 }
 
 .carta img {
-  width: 242px;
-  height: 337px;
+  width: 161px;
+  height: 225px;
   transition: transform 0.3s ease, opacity 0.5s ease;
   transform-style: preserve-3d;
   display: inline-block;
