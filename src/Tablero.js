@@ -3,10 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import Charizard from "./img/cartas/Charizard-Tera.png";
 import Lapras from "./img/cartas/Lapras-Vmax.png"
-import Eternatus from "./img/cartas/Eternatus-Vmax.png"
 import Rayquaza from "./img/cartas/MegaRayquaza-EX.png"
 import Mewtwo from "./img/cartas/Mewtwo-ex.png"
-import Ondulagua from "./img/cartas/Ondulagua-ex.png"
 import Phanpy from "./img/cartas/Phanpy.png"
 import Pikachu from "./img/cartas/Pikachu-Vmax.png"
 
@@ -52,11 +50,14 @@ function Tablero () {
     useEffect(() => {
       if (selectedCards.length === 2) {
         const [firstCard, secondCard] = selectedCards;
+        
 
         if(firstCard.type === secondCard.type) {
             carta.current.hidden = true;
         } else {
-          //setSelectedCards([]);
+          setTimeout(() =>{
+              
+          });
         }
       }
 

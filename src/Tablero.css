@@ -1,4 +1,4 @@
 .tablero {
-    display: flex; 
-    flex-direction: row;
-  }
+  background-image: url("./img/fondo/mesa-tablero.png");
+  display: flex; flex-direction: row;
+}
