@@ -23,7 +23,7 @@ function Tablero () {
       {type: "Pikachu", image:Pikachu},
     ];
 
-    const cartasDuplicadas = [...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5);
+    const [cartasDuplicadas] = useState([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
 
     const [selectedCards, setSelectedCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState(
@@ -52,7 +52,7 @@ function Tablero () {
       if (selectedCards.length === 2) {
         const [firstCard, secondCard] = selectedCards;
 
-        if(firstCard.type == secondCard.type) {
+        if(firstCard.type === secondCard.type) {
             carta.current.hidden = true;
         }
       }
