@@ -44,6 +44,7 @@ function Tablero () {
       setFlippedCards((prevFlipped) => {
         const newFlipped = [...prevFlipped];
         newFlipped[index] = !newFlipped[index];
+        //setSelectedCards([...selectedCards, index])
         return newFlipped;
       });
     };
@@ -54,6 +55,8 @@ function Tablero () {
 
         if(firstCard.type === secondCard.type) {
             carta.current.hidden = true;
+        } else {
+          //setSelectedCards([]);
         }
       }
 
