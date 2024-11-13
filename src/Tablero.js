@@ -21,7 +21,7 @@ function Tablero () {
       {type: "Pikachu", image:Pikachu},
     ];
 
-    const [cartasDuplicadas] = useState([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
+    const [cartasDuplicadas, setCartasDuplicadas] = useState([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
 
     const [selectedCards, setSelectedCards] = useState([]);
     const [flippedCards, setFlippedCards] = useState(
@@ -36,6 +36,7 @@ function Tablero () {
 
     const resetCards = () => {
       setFlippedCards(Array(mapaCartas.length).fill(false));
+      setCartasDuplicadas([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
     };
 
     const toggleCard = (index) => {
