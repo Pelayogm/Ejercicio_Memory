@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <body>
         <div className='App'>
-          <p>Juego Memory</p>
+          <p className='titulo-juego'>Juego Memory</p>
             <Tablero></Tablero>
         </div>
       </body>

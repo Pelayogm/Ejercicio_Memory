@@ -5,6 +5,12 @@
 }
 
 .titulo-juego {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 48px;
+}
+
+.titulo-juego {
   color: white;
   font-family: sans-serif;
   font-size: 40px;
