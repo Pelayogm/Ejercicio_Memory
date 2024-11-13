@@ -1,5 +1,5 @@
 import Carta from "./Carta";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Charizard from "./img/cartas/Charizard-Tera.png";
 import Lapras from "./img/cartas/Lapras-Vmax.png"
@@ -11,6 +11,8 @@ import Phanpy from "./img/cartas/Phanpy.png"
 import Pikachu from "./img/cartas/Pikachu-Vmax.png"
 
 function Tablero () {
+
+  const carta = useRef(null);
 
     const mapaCartas = [
       {type: "Charizard", image: Charizard},
@@ -51,12 +53,15 @@ function Tablero () {
         const [firstCard, secondCard] = selectedCards;
 
         if(firstCard.type == secondCard.type) {
-        
+            carta.current.hidden = true;
         }
       }
 
 
-    });
+    }, [flippedCards]
+    
+    
+    );
 
     
     
@@ -66,12 +71,12 @@ function Tablero () {
       <br />
       <div className="grid">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="row">
+          <div key={rowIndex} className="row" ref={carta}>
             {row.map((carta, index) => (
               <Carta
                 key={index}
                 isFlipped={flippedCards[rowIndex * 4 + index]}
-                onClick={() => toggleCard(rowIndex * 4 + index)}
+                setValue={() => toggleCard(rowIndex * 4 + index)}
                 image={carta.image}
                 type={carta.type}
               />
