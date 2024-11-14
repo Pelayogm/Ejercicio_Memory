@@ -8,6 +8,7 @@ import Rayquaza from "./img/cartas/MegaRayquaza-EX.png"
 import Mewtwo from "./img/cartas/Mewtwo-ex.png"
 import Phanpy from "./img/cartas/Phanpy.png"
 import Pikachu from "./img/cartas/Pikachu-Vmax.png"
+import luigiWin from "./img/fondo/luigi-win.gif"
 
 function Tablero () {
 
@@ -161,8 +162,9 @@ function Tablero () {
       <div className="tablero">
       <p className="moves">Movimientos: {moves}</p>
       <button onClick={resetCards}>Reiniciar Cartas</button>
-      {matchWinned ? <p className="moves">Has ganado!</p>: null}
-      <br />
+      <br/>
+      {matchWinned ? <div><p className="moves">¡Has Ganado!</p><img className="gifLuigi" src={luigiWin} alt='luigi'/></div>: null}
+      <br/>
       <div className="grid">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="row" ref={carta}>
