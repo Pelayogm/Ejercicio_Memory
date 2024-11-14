@@ -39,6 +39,9 @@ function Tablero () {
     //Creamos otro array para contabilizar cuantas cartas, han coincidido. Por defecto se inicializa en "false", para indicar que ninguna ha tenido coincidencia.
     const[hiddenCards, setHiddenCards] = useState(Array(mapaCartas.length).fill(false));
 
+    //Esta variable sirve para comprobar que la partida ha sido completada.
+    const[matchWinned, setMatchWinned] = useState(false);
+
     //El Div que se devolvera para ser el tablero, se divide en 3 filas con la función "slice()", cada fila con 4 Cartas, que se recogen de el array de "cartasDuplicadas".
     const rows = [
       cartasDuplicadas.slice(0,4),
@@ -46,12 +49,14 @@ function Tablero () {
       cartasDuplicadas.slice(8,12),
     ];
 
+    //Con "setMatchWinned", ponemos el booleano en false, para evitar que salga la ventana de la victoria.
     //Esta función usa "setFlippedCards" para poner todas las cartas en "false", indicando que están todas sin voltear.
     //Y también se llama a "setHiddenCards" estableciendolo entero en "false", para indicar que no hay ninguna coincidencia.
     //"setSelectedCards", pone el array de "selectedCards", el array que tenemos para saber que cartas han sido escogidas, lo pone vacío. 
     //Después setCartasDuplicadas aleatoriza las cartas.
     //Y se ponen los movimientos a 0.
     const resetCards = () => {
+      setMatchWinned(false);
       setFlippedCards(Array(mapaCartas.length).fill(false));
       setHiddenCards(Array(mapaCartas.length).fill(false));
       setSelectedCards([]);
@@ -112,6 +117,11 @@ function Tablero () {
               const newHidden = [...prevHidden];
               newHidden[first] = true;
               newHidden[second] = true;
+
+              if(newHidden.every((card => card === true))) {
+                setMatchWinned(true);
+              }
+
               return newHidden;
             });
         } else {
@@ -151,6 +161,7 @@ function Tablero () {
       <div className="tablero">
       <p className="moves">Movimientos: {moves}</p>
       <button onClick={resetCards}>Reiniciar Cartas</button>
+      {matchWinned ? <p className="moves">Has ganado!</p>: null}
       <br />
       <div className="grid">
         {rows.map((row, rowIndex) => (
