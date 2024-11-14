@@ -17,7 +17,7 @@
 }
 
 .hidden {
-  transition: visibility 0s 0.6s;
+  transition: visibility 0.3s 0.4s;
   opacity: 0.6;
   visibility: hidden;
 }
