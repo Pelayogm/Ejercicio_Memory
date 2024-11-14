@@ -1,5 +1,6 @@
 import Carta from "./Carta";
 import React, { useEffect, useRef, useState } from "react";
+import "./Tablero.css"
 
 import Charizard from "./img/cartas/Charizard-Tera.png";
 import Lapras from "./img/cartas/Lapras-Vmax.png"
@@ -21,6 +22,9 @@ function Tablero () {
       {type: "Phanpy", image: Phanpy},
       {type: "Pikachu", image:Pikachu},
     ];
+
+    //Este array
+    const [moves, setMoves] = useState(0);
 
     //Este array tiene las cartas del "mapaCartas" que son las que habrá en el tablero y las ordena y aleatoriza con la función "Math.random".
     const [cartasDuplicadas, setCartasDuplicadas] = useState([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
@@ -51,6 +55,7 @@ function Tablero () {
       setHiddenCards(Array(mapaCartas.length).fill(false));
       setSelectedCards([]);
       setCartasDuplicadas([...mapaCartas, ...mapaCartas].sort(() => Math.random() - 0.5));
+      setMoves(0);
     };
 
     //Esta función es llamada con "index", nos indica en la posición en la que hemos llamado a la carta.
@@ -97,6 +102,8 @@ function Tablero () {
         const firstCard = cartasDuplicadas[first];
         const secondCard = cartasDuplicadas[second];
 
+        setMoves(moves + 1);
+
         if(firstCard.type === secondCard.type) {
             setHiddenCards((prevHidden) => {
               const newHidden = [...prevHidden];
@@ -139,6 +146,7 @@ function Tablero () {
 
     return (
       <div className="tablero">
+      <p className="moves">Movimientos: {moves}</p>
       <button onClick={resetCards}>Reiniciar Cartas</button>
       <br />
       <div className="grid">
