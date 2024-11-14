@@ -78,7 +78,7 @@ function Tablero () {
     //las cartas.
 
     //Si la condición se cumple, creamos una copia de el estado y cogemos a las variables "first" y "second", y la establecemos en "true". Para indicar que han coincidido.
-    //Y retornamos el nuevo estado para reemplazar al anterior.
+    //Y retornamos el nuevo estado para reemplazar al anterior. Con esto "hiddenCards" tendrá las cartas que ocultaremos.
 
     //Si la condición no se cumple, llamamos a la función "setFlippedCards" con un estado antes de efectuar los cambios.
     //Creamos una copia del estado, y sobre ella editamos, pero está vez poniendo los valores en "false", indicando que se tienen que poner otra vez invertidas.
@@ -130,6 +130,9 @@ function Tablero () {
     //"setValue", sirve para hacer saber a la carta que hemos interactuado con ella, y con eso llamamos a la función "toggleCard()", a la cuál le pasamos un valor que sacamos
     //calculando con "index" y con "rowIndex" multiplicado por las 4 cartas, para localizar la carta.
 
+    //"hidden", es utilizado para actualizar el array de "hiddenCards" con la posición de la carta. Destacamos que este array de cartas que se esconden, solo se actualiza cuando el tipo de las 2 cartas que se
+    //seleccionan coinciden.
+
     //"image", es el valor que le damos a la carta, cuando "isFlipped" sea "true", actualizamos la imagen, a la que sacamos de "mapaCartas".
 
     //"type", sirve para darle el tipo a la carta, que será con lo que compararemos las cartas.
@@ -146,6 +149,7 @@ function Tablero () {
                 key={index}
                 isFlipped={flippedCards[rowIndex * 4 + index]}
                 setValue={() => toggleCard(rowIndex * 4 + index)}
+                hidden={hiddenCards[rowIndex * 4 + index]}
                 image={carta.image}
                 type={carta.type}
               />
