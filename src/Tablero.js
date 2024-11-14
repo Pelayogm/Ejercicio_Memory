@@ -23,7 +23,7 @@ function Tablero () {
       {type: "Pikachu", image:Pikachu},
     ];
 
-    //Este array
+    //Esta constante se utiliza para el contador de movimientos por defecto, se inicializa siempre en 0.
     const [moves, setMoves] = useState(0);
 
     //Este array tiene las cartas del "mapaCartas" que son las que habrá en el tablero y las ordena y aleatoriza con la función "Math.random".
@@ -50,6 +50,7 @@ function Tablero () {
     //Y también se llama a "setHiddenCards" estableciendolo entero en "false", para indicar que no hay ninguna coincidencia.
     //"setSelectedCards", pone el array de "selectedCards", el array que tenemos para saber que cartas han sido escogidas, lo pone vacío. 
     //Después setCartasDuplicadas aleatoriza las cartas.
+    //Y se ponen los movimientos a 0.
     const resetCards = () => {
       setFlippedCards(Array(mapaCartas.length).fill(false));
       setHiddenCards(Array(mapaCartas.length).fill(false));
@@ -81,6 +82,8 @@ function Tablero () {
 
     //Creamos 2 constantes, que actualizamos cada vez que llamamos a "useEffect", siempre que entremos en la condición, gracias a estas 2 variables. Comparamos el type que tienen
     //las cartas.
+
+    //Los movimientos aunque no coincidan, aumentan cuando 2 cartas han sido seleccionadas.
 
     //Si la condición se cumple, creamos una copia de el estado y cogemos a las variables "first" y "second", y la establecemos en "true". Para indicar que han coincidido.
     //Y retornamos el nuevo estado para reemplazar al anterior. Con esto "hiddenCards" tendrá las cartas que ocultaremos.

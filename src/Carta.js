@@ -20,7 +20,7 @@ const Carta = ({ isFlipped, setValue, hidden, image, type }) => {
         src={isFlipped ? image : parteTrasera}
         alt={type}
         className={isFlipped ? 'isFlipped' : ''}
-      />
+      />A
     </div>
   );
 };
