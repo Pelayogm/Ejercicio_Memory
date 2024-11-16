@@ -160,10 +160,8 @@ function Tablero () {
 
     return (
       <div className="tablero">
-      <p className="moves"><button onClick={resetCards}>Reiniciar Cartas</button> Movimientos: {moves}</p>
-      <br/>
+      <p className="moves"><button className="button-restart" onClick={resetCards}>Volver a empezar</button> |  Movimientos: {moves}</p>
       {matchWinned ? <div><p className="moves">¡Has Ganado!</p><img className="gifLuigi" src={luigiWin} alt='luigi'/></div>: null}
-      <br/>
       <div className="grid">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="row" ref={carta}>
