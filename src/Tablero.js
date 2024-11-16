@@ -160,8 +160,7 @@ function Tablero () {
 
     return (
       <div className="tablero">
-      <p className="moves">Movimientos: {moves}</p>
-      <button onClick={resetCards}>Reiniciar Cartas</button>
+      <p className="moves"><button onClick={resetCards}>Reiniciar Cartas</button> Movimientos: {moves}</p>
       <br/>
       {matchWinned ? <div><p className="moves">¡Has Ganado!</p><img className="gifLuigi" src={luigiWin} alt='luigi'/></div>: null}
       <br/>
