@@ -1,22 +1,15 @@
 import './App.css';
-import { Helmet } from 'react-helmet';
 import Tablero from './Tablero';
 import luigi from './luigi';
 
+//El título de la pestaña está en "public/index.html"; al ser fijo no hace falta ninguna librería para cambiarlo.
 function App() {
   return (
-    <div className="App">
-      <Helmet>
-        <title>Memory Game | Pelayogm & Danielma</title>
-      </Helmet>
-      <body>
-        <div className='App'>
-          <p className='titulo-juego'>Juego Memory</p>
-            <img src={luigi} alt='luigi'/>
-            <Tablero></Tablero>
-        </div>
-      </body>
-    </div>
+    <main className="App">
+      <h1 className='titulo-juego'>Juego Memory</h1>
+      <img className='luigi' src={luigi} alt=''/>
+      <Tablero />
+    </main>
   );
 }
 
