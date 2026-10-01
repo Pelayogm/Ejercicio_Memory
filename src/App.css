@@ -3,14 +3,35 @@
   text-align: center;
   background-image: url("./img/fondo/background-tcg.png");
   background-size: cover;
+  background-position: center;
 }
 
 .titulo-juego {
   color: white;
   font-family: sans-serif;
-  font-size: 40px;
+  font-size: clamp(28px, 7vw, 40px);
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 1em;
   padding-top: 20px;
+}
+
+.luigi {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Móvil en vertical: GIF más pequeño para que título, marcador y tablero quepan en la pantalla. */
+@media (max-width: 600px) {
+  .luigi {
+    max-width: 60vw;
+  }
+}
+
+/* Móvil en horizontal: la altura es lo que falta, así que el GIF se limita por alto. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .luigi {
+    width: auto;
+    max-height: 35vh;
+  }
 }

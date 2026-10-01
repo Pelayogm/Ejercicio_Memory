@@ -1,10 +1,12 @@
 .marcador {
  color: black;
  font-family: Arial;
- font-size: 20px;
+ font-size: clamp(16px, 4.5vw, 20px);
 }
 
 .gif-luigi {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -15,13 +17,17 @@
   border-radius: 10px;
   background-color: transparent;
   border: 4px solid black;
+  touch-action: manipulation;
 }
 
-.boton-reiniciar:hover {
-  color: white;
-  background-color: black;
-  transition: 0.5s;
-  cursor: pointer;
+/* Solo con ratón: en pantallas táctiles el :hover se quedaría activado después de tocar el botón. */
+@media (hover: hover) {
+  .boton-reiniciar:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+    cursor: pointer;
+  }
 }
 
 /* Una sola cuadrícula para las 12 cartas: 4 columnas de 161px como máximo, que encogen por igual cuando no caben. */
@@ -31,4 +37,17 @@
   justify-content: center;
   gap: clamp(8px, 2.5vw, 20px);
   padding: 0 16px 24px;
+}
+
+/* Móvil en horizontal: 6 columnas y 2 filas. El ancho máximo se calcula para que las 2 filas quepan en la altura
+   de la pantalla: cada carta mide (alto disponible / 2) * 161 / 225 de ancho, más los 5 huecos de 8px.
+   La línea con "svh" (alto visible con las barras del navegador desplegadas) sustituye a la de "vh" donde se admite. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .cuadricula {
+    grid-template-columns: repeat(6, minmax(0, 161px));
+    gap: 8px;
+    margin: 0 auto;
+    max-width: calc(6 * (100vh - 24px) / 2 * 161 / 225 + 40px);
+    max-width: calc(6 * (100svh - 24px) / 2 * 161 / 225 + 40px);
+  }
 }

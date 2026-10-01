@@ -9,6 +9,7 @@ Juego de memoria con cartas Pokémon hecho en React por Pelayogm y Danielma.
 - Cada par de cartas levantadas cuenta como un movimiento. La partida termina al encontrar las 6 parejas.
 - "Volver a empezar" baraja de nuevo y pone el contador a 0.
 - Se puede jugar con ratón, pantalla táctil o teclado (Tab para pasar de una carta a otra, Enter o Espacio para levantarla).
+- El diseño se adapta a la pantalla: 4 columnas en escritorio y en móvil en vertical, y 6 columnas en móvil en horizontal.
 
 ## Requisitos
 
