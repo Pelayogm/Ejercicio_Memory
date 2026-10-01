@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-y-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # GitHub Actions define CI=true: los tests se ejecutan una vez y cualquier warning de ESLint rompe la build.
+      - run: npm test -- --watchAll=false
+      - run: npm run build

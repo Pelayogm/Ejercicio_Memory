@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Juego Memory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Juego de memoria con cartas Pokémon hecho en React por Pelayogm y Danielma.
 
-## Available Scripts
+## Cómo se juega
 
-In the project directory, you can run:
+- El tablero tiene 12 cartas boca abajo, es decir, 6 parejas.
+- Levanta dos cartas: si son iguales, la pareja desaparece; si no, se vuelven a tapar al cabo de un segundo.
+- Cada par de cartas levantadas cuenta como un movimiento. La partida termina al encontrar las 6 parejas.
+- "Volver a empezar" baraja de nuevo y pone el contador a 0.
+- Se puede jugar con ratón, pantalla táctil o teclado (Tab para pasar de una carta a otra, Enter o Espacio para levantarla).
+- El diseño se adapta a la pantalla: 4 columnas en escritorio y en móvil en vertical, y 6 columnas en móvil en horizontal.
 
-### `npm start`
+## Requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js 18 o superior y npm.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+| Comando | Qué hace |
+| --- | --- |
+| `npm install` | Instala las dependencias. |
+| `npm start` | Arranca la app en modo desarrollo en http://localhost:3000. |
+| `npm test` | Ejecuta los tests (Jest y Testing Library). |
+| `npm run build` | Genera la versión de producción en `build/`. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura
 
-### `npm run build`
+- `src/App.js`: título, GIF de cabecera y tablero.
+- `src/Tablero.js`: lógica de la partida (barajado, cartas levantadas, parejas encontradas, movimientos y reinicio).
+- `src/Carta.js`: carta con volteo 3D; es un botón, así que también funciona con teclado.
+- `src/App.test.js` y `src/Tablero.test.js`: tests.
+- `src/img/`: imágenes de las cartas y del fondo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Autores
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Pelayogm
+- Danitinhg (Danielma)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Créditos
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Las imágenes de las cartas pertenecen a The Pokémon Company, Nintendo, Creatures y GAME FREAK; el fondo (Coconut Mall) y los GIF de Luigi, a Nintendo. Se usan en un ejercicio educativo sin ánimo de lucro. Este proyecto no está afiliado a ninguna de esas empresas.
