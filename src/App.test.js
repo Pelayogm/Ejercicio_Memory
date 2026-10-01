@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('muestra el título y las 12 cartas boca abajo', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('Juego Memory')).toBeInTheDocument();
+  expect(screen.getAllByRole('button', { name: 'Carta boca abajo' })).toHaveLength(12);
 });

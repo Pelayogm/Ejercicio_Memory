@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import parteTrasera from "./img/cartas/Carta-atras.png";
+import React from "react";
+import parteTrasera from "./img/cartas/Carta-atras.webp";
 import "./Carta.css";
 
-//El componente "Carta" tiene como valores "isFlipped", "setValue", "image", "type"
-//Se crea un div para la carta que cuando se hace "setValue" al hacer clic en él.
+//La carta tiene dos caras superpuestas. Al levantarla, el contenedor gira 180° y "backface-visibility: hidden"
+//(en "Carta.css") oculta la cara que queda de espaldas, así el anverso se ve sin que la imagen salga invertida.
 
-//Usamos "hidden" para activar la clase ".hidden" que esta en el ".css". Esto se realiza si se cumple la condición.
-
-//Alterna el estado isFlipped con el valor "image" que le pasamos y con "parteTrasera" que es la imagen por defecto que tendrá la carta.
-
-//El "type" se lo pasamos también.
-
-//Y su clase se actualizará con "isFlipped", si es "true" tendrá una clase llamada "isFlipped" que en el ".css" tendrá una transición para el efecto que hacen las cartas.
-
-const Carta = ({ isFlipped, setValue, hidden, image, type }) => {
+//Es un <button> para que se pueda usar con el teclado. El "aria-label" solo dice qué carta es cuando está boca arriba,
+//para que un lector de pantalla no revele las cartas tapadas. Las parejas encontradas se desactivan.
+const Carta = ({ imagen, tipo, bocaArriba, emparejada, onSeleccionar }) => {
   return (
-    <div className={`carta ${hidden ? 'hidden' : ''}`} onClick={setValue}>
-      <img
-        src={isFlipped ? image : parteTrasera}
-        alt={type}
-        className={isFlipped ? 'isFlipped' : ''}
-      />
-    </div>
+    <button
+      type="button"
+      className={`carta${bocaArriba ? " boca-arriba" : ""}${emparejada ? " emparejada" : ""}`}
+      onClick={onSeleccionar}
+      disabled={emparejada}
+      aria-label={bocaArriba ? tipo : "Carta boca abajo"}
+    >
+      <span className="carta-interior">
+        <img className="cara cara-trasera" src={parteTrasera} alt="" />
+        <img className="cara cara-delantera" src={imagen} alt="" />
+      </span>
+    </button>
   );
 };
 
